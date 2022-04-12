@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="result"></h1>
+    <script>
+        //변수 타입은 var 아니면 let
+        //let은 최신문법
+        //둘 다 js의 특성상 타입이 정해져있지 않습니다.
+        //둘의 차이점
+        //var는 변수선언을 중복해 된다
+        //var는 중복선언해도 동작은 하지만 논리적 오류가 발생하고,
+        //let은 중복선언하면 아예 실행이 안됌
+        //prompt:입력받는 창
+        //int 등 타입이 없기에 let,var 둥중에 써야함
+        let input=""//초기값 설정을 비워줄려고,문자열 타입이고, 공백을 가지고 있음을 명시       
+        let floor=prompt("몇층?")
+        for(let i=1;i<floor;i++)
+        {
+            for(let j=0;j<i;j++){
+                input+="*"  
+            }
+            input+="\n"
+        }
+        console.log(input)  //콘솔창에 글자 적어줌
+
+        //웹페이지 안에서 존재하는 모든 컴포넌트들(태그)를 가르키거나 제어
+        let h1tag=document.querySelector('#result') //id가 result인 태그를 선택해서 태그 변수에 대입
+        h1tag.innerText=input //태그의 글자를 input 값으로 바꿈        
+
+        let colorList=["red","green","blue","gold","springgreen"]
+        h1tag.style.color=colorList[Math.floor(Math.random()*5)]
+        //Math.random(->0이상 1미만의 실수를 랜덤하게 반환하는 값)
+        //Math.floor -> 버림
+        let myp=document.createElement('p') //p태그를 코드상에서 만들기
+        myp.id="김영환" //id 추가
+        myp.innerText="김영환은 5차반" //텍스트 추가
+        myp.style.color="gold"
+        myp.style.background="black"
+        document.body.appendChild(myp) //body에 추가해줘야함
+                   
+    </script>
+</body>
+</html>

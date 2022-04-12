@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>층 수 입력</span>
+    <input type="text" id="floor">
+    <!-- button#output 입력하면 알아서 생김 -->
+    <button id="output">피라미드 출력</button>
+    <script>
+        //js에서는 문자개념(char) 없다
+        //무조건 문자열
+        //document.querySelector는 style의 선택자처럼 태그 선택
+        let output = document.getElementById('output')//id만 선택하는 전용기능
+        //addEventListner 혹은 onclick 이용해서 output 태그를 눌렀을때 함수가 실행되게 함
+        output.onclick=function(){
+            let floor=document.querySelector('#floor').value
+            floor=Number(floor)
+            //alert(++floor)//alert:경고창띄우기 ,++floor:값을 증가시키고 그다음 출력
+            let triangle=""
+            for(let i=1;i<=floor;i++)
+            {
+                for(let j=floor;j>i;j--)
+                   //triangle+="&nbsp;"
+                    triangle+="\u00a0"
+                for(let j=0;j<i;j++)
+                    triangle+="*"
+                
+                triangle+="\n"
+            }
+            console.log(triangle)
+
+            //js에서는 0,null,undefined와 같은 일부값들만 false 
+            // 그 외에 모든 값들은 true로 간주
+            
+            if(document.getElementById("h1result"))
+                document.getElementById("h1result").remove()
+
+            //document.body.removeChild('#h1result')
+            let result=document.createElement('h1')
+            result.id="h1result"
+            result.innerText=triangle
+            //result.innerHTML=triangle
+            document.body.appendChild(result)
+        }
+    </script>
+</body>
+</html>

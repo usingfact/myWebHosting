@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <i>무엇을 먹을지 고민하지 말라-마테복음-</i>
+    <button id="choice_lunch">점심 고르기</button>
+    <img id="lunch">
+    <script>
+        
+        let choice_lunch=document.querySelector('#choice_lunch')
+        let 스테이크="https://img.huffingtonpost.com/asset/5bf24ac824000060045835ff.jpeg?ops=1778_1000"
+        let 떡볶이="https://recipe1.ezmember.co.kr/cache/recipe/2019/01/17/6fb9bfa566c0c3fec18080b5e927c2661.jpg"
+        let 초밥="https://cdn.mindgil.com/news/photo/202111/72857_11039_5046.jpg"
+        let 순두부찌개 = "https://recipe1.ezmember.co.kr/cache/recipe/2017/12/27/edd739fdab97c72b3a2bf9cd812daf671.jpg"
+
+        let 돈까스="http://image.g9.co.kr/g/1832366398/n?ts=1634380390000"
+        
+
+        //배열을 만들 때 아무것도 없는 배열로 만든뒤 내가 원하는 인덱스 적고
+        //값을 추가하면 배열이 그것에 맞게 크기가 늘어남
+        //ArrrayList,List
+        let lunchList=[스테이크,떡볶이,초밥]
+        lunchList[3]=순두부찌개
+        lunchList[4]=돈까스
+        //결과적으로 lunchList 배열은 5칸
+        
+        choice_lunch.onclick=()=>{
+            let lunch=document.querySelector("#lunch")
+            lunch.src=lunchList[Math.floor(Math.random()*5)]
+        }
+    </script>
+</body>
+</html>
